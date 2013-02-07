@@ -116,7 +116,7 @@ class Mailer extends CActiveRecord
    * redefinition method save model, save relations
    * @return bool
    */
-  public function save(){
+  public function save($runValidator = true, $attributes = true){
     $save = parent::save();
     if($save){
       foreach($this->getEmails() as $emailId){
